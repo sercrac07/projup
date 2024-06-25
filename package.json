@@ -1,0 +1,29 @@
+{
+  "name": "projectgen",
+  "description": "CLI tool for quickly creating and initializing new projects with ease.",
+  "version": "0.0.1",
+  "bin": "./bin/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sercrac07/projectgen"
+  },
+  "scripts": {
+    "build": "rm -rf bin && tsc",
+    "lint": "tsc --noEmit",
+    "test": "rm -rf test && ts-node src/index.ts"
+  },
+  "keywords": [
+    "cli",
+    "init"
+  ],
+  "author": "sercrac07",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.14.8",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "coinp": "^2.5.1"
+  }
+}
