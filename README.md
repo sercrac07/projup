@@ -1,9 +1,9 @@
-# ProjectGen
+# Fast SetUp
 
-[![npm version](https://badge.fury.io/js/projectgen.svg)](https://badge.fury.io/js/projectgen)
+[![npm version](https://badge.fury.io/js/projup.svg)](https://badge.fury.io/js/projup)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-`projectgen` is a simple and efficient CLI tool for quickly creating and initializing new projects with ease.
+`projup` is a simple and efficient CLI tool for quickly creating and initializing new projects with ease.
 
 ## Features
 
@@ -16,21 +16,25 @@
 You can install the package via **npm**:
 
 ```bash
-npm install -g projectgen
+npm install -g projup
 
-projectgen
+projup
 ```
 
 Or execute with **npx**:
 
 ```bash
-npx projectgen
+npx projup
 ```
 
 ## Usage
 
 ```bash
-# TODO
+npx projup
+
+# Project path: ./project
+# Select a project type: Fast project
+# Do you want to use TypeScript? Yes
 ```
 
 ## Contributing
@@ -52,7 +56,7 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 7. Push your branch to your fork: `git push origin feature-name`.
 8. Open a pull request to the `main` branch of the original repository.
 
-Thank you for contributing to `projectgen`!
+Thank you for contributing to `projup`!
 
 ## License
 

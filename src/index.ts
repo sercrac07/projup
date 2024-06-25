@@ -35,9 +35,13 @@ import { detectPackageManager } from './lib/process'
 
   const fullPath = path.join(process.cwd(), projectPath)
 
+  const initLoader = coinp.loader()
+  initLoader.start('Creating project')
+
   if (fs.existsSync(fullPath)) {
     const files = fs.readdirSync(fullPath)
     if (files.length > 0) {
+      initLoader.end('Error creating the project')
       coinp.outro({ type: 'error', title: 'Project already exists', message: [`The path "${fullPath}" is not empty.`] })
       process.exit(1)
     }
@@ -49,14 +53,15 @@ import { detectPackageManager } from './lib/process'
 
   function createContent(key: string, value: string, currentPath: string) {
     if (key === 'TODO') {
+      initLoader.end('Project ready')
       const steps = [`cd ${projectPath}`, value.replace(/{{package_install}}/g, PACKAGES[packageManager]['install'])]
       if (projectPath === './') steps.shift()
       steps.forEach((step, index) => {
         if (step === '') steps.splice(index, 1)
       })
 
-      if (steps.length >= 1) coinp.outro('Project ready, now run', ...steps)
-      else coinp.outro('Project ready')
+      if (steps.length >= 1) coinp.outro('Now run:', ...steps)
+      else coinp.outro('Edit yout project!')
       return
     }
     if (typeof value === 'string') fs.writeFileSync(path.join(currentPath, key), value.replace(/{{name}}/g, projectName))
