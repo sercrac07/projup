@@ -23,7 +23,13 @@ import { detectPackageManager } from './lib/process'
     },
   })
 
-  const projectType = await coinp.select({ message: 'Select a project type:', choices: [{ label: 'Fast project', value: 'fast' }] })
+  const projectType = await coinp.select({
+    message: 'Select a project type:',
+    choices: [
+      { label: 'Fast project', value: 'fast' },
+      { label: 'Discord bot', value: 'discord' },
+    ],
+  })
 
   const projectLang = await coinp.select({
     message: 'Do you want to use TypeScript?',
@@ -74,5 +80,5 @@ import { detectPackageManager } from './lib/process'
     }
   }
 
-  for (let k in CONTENTS[projectType][projectLang]) createContent(k, CONTENTS[projectType][projectLang][k], fullPath)
+  for (let k in CONTENTS[projectType][projectLang]) createContent(k, CONTENTS[projectType][projectLang][k as keyof (typeof CONTENTS)['discord' | 'fast']['javascript' | 'typescript']], fullPath)
 })()
