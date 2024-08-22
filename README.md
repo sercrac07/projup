@@ -13,18 +13,24 @@
 
 ## Installation
 
-You can install the package via **npm**:
+You can install the package globally:
 
 ```bash
 npm install -g projup
+pnpm add -g projup
+yarn global add projup
+bun add projup
 
 projup
 ```
 
-Or execute with **npx**:
+Or execute it:
 
 ```bash
 npx projup
+pnpx projup
+yarn projup
+bun projup
 ```
 
 ## Usage
