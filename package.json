@@ -8,7 +8,7 @@
     "url": "https://github.com/sercrac07/projup"
   },
   "scripts": {
-    "build": "rm -rf bin && tsc",
+    "build": "tsup",
     "lint": "eslint **/*.ts",
     "test": "rm -rf test && ts-node src/index.ts"
   },
@@ -24,6 +24,7 @@
     "@types/node": "^20.14.8",
     "eslint": "^9.9.0",
     "ts-node": "^10.9.2",
+    "tsup": "^8.2.4",
     "typescript": "^5.5.2",
     "typescript-eslint": "^8.2.0"
   },
